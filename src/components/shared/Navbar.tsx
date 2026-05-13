@@ -78,7 +78,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+                className="text-base font-bold text-zinc-600 dark:text-zinc-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
               >
                 {link.label}
               </Link>
@@ -94,11 +94,7 @@ export default function Navbar() {
               onClick={() => setDark(!dark)}
               className="rounded-full"
             >
-              {dark ? (
-                <Sun className="w-4 h-4" />
-              ) : (
-                <Moon className="w-4 h-4" />
-              )}
+              {dark ? <Sun size={32} /> : <Moon size={32} />}
             </Button>
 
             {isAuthenticated && user ? (
