@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <div className="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center">
-              <ChefHat className="w-5 h-5 text-white" />
+              <ChefHat className="w-5 h-5" />
             </div>
             <span className="brand-gradient-text">ForkAI</span>
           </Link>

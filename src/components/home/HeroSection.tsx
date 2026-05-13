@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ChefHat, Sparkles, ArrowRight, Play } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 const HERO_SLIDES = [
   {
