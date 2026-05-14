@@ -76,7 +76,6 @@ export default function AboutPage() {
                     <img
                       src={member.image}
                       alt={member.name}
-                      fill
                       className="object-cover"
                     />
                   </div>
