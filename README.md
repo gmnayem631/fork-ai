@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ForkAI
 
-## Getting Started
+An AI-powered recipe discovery and meal planning platform built with Next.js, TypeScript, and Google Gemini AI.
 
-First, run the development server:
+## Live Demo
+
+- **Live:** https://fork-ai-seven.vercel.app
+- **GitHub:** https://github.com/gmnayem631/fork-ai
+
+## Demo Credentials
+
+| Role  | Email            | Password |
+| ----- | ---------------- | -------- |
+| User  | user@forkai.com  | user123  |
+| Admin | admin@forkai.com | admin123 |
+
+## AI Features
+
+### 1. AI Kitchen - "What Can I Cook?"
+
+Users enter ingredients they have in their fridge and Google Gemini generates a complete custom recipe including ingredients, step-by-step instructions, cook time, difficulty, and chef tips.
+
+### 2. AI Meal Planner
+
+Users select their dietary preference (Vegan, Keto, etc.) and health goal (Weight Loss, Muscle Gain, etc.) and Gemini generates a full personalized 7-day meal plan with breakfast, lunch, and dinner for each day including calorie estimates.
+
+## Tech Stack
+
+### Frontend
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Shadcn/UI
+- React Hook Form + Zod
+- TanStack Query
+- Zustand
+- Recharts
+
+### Backend
+
+- Next.js API Routes (serverless)
+- NextAuth.js (Google OAuth + Credentials)
+- In-memory storage
+- Zod validation
+
+### AI
+
+- Google Gemini 2.5 Flash API
+
+## Features
+
+- Role-based dashboards (User & Admin)
+- Authentication (email/password + Google OAuth)
+- Recipe listing with search, filter, sort, pagination
+- AI recipe generator from ingredients
+- AI weekly meal planner
+- Roles-speciific Dashboard with charts
+- Dark mode support
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/fork-ai.git
+cd fork-ai
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env.local` file in the root:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── (auth)/         # Login & Register pages
+│   ├── (main)/         # Public pages (recipes, about, blog, etc.)
+│   ├── api/            # API routes (auth, recipes, AI)
+│   └── dashboard/      # User & Admin dashboards
+├── components/
+│   ├── shared/         # Navbar, Footer, Providers
+│   ├── home/           # Landing page sections
+│   ├── recipe/         # Recipe components
+│   └── dashboard/      # Dashboard components
+├── data/               # Seed data
+├── hooks/              # Custom hooks
+├── lib/                # Auth, Gemini, utilities
+├── store/              # Zustand store
+└── types/              # TypeScript types
+```
