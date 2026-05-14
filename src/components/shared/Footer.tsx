@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { ChefHat } from "lucide-react";
-import {
-  FaInstagram,
-  FaXTwitter,
-  FaYoutube,
-  FaFacebookF,
-} from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const FOOTER_LINKS = {
   Explore: [
@@ -28,10 +23,12 @@ const FOOTER_LINKS = {
 };
 
 const SOCIAL = [
-  { icon: FaInstagram, href: "#", label: "Instagram" },
-  { icon: FaXTwitter, href: "#", label: "Twitter" },
-  { icon: FaYoutube, href: "#", label: "YouTube" },
-  { icon: FaFacebookF, href: "#", label: "Facebook" },
+  { icon: FaGithub, href: "https://github.com/gmnayem631", label: "GitHub" },
+  {
+    icon: FaLinkedin,
+    href: "https://linkedin.com/in/gulam-mustafa-nayem",
+    label: "LinkedIn",
+  },
 ];
 
 export default function Footer() {

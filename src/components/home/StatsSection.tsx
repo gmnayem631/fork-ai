@@ -31,12 +31,12 @@ export default function StatsSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {STATS.map((stat) => (
-            <div key={stat.label} className="text-center">
+            <div key={stat.label} className="text-center text-white">
               <p className="text-5xl font-bold mb-2">{stat.value}</p>
-              <p className="text-xl font-semibold mb-1 text-orange-400">
+              <p className="text-xl font-semibold mb-1 text-orange-100">
                 {stat.label}
               </p>
-              <p className="text-orange-300 text-base">{stat.description}</p>
+              <p className="text-orange-200 text-base">{stat.description}</p>
             </div>
           ))}
         </div>
