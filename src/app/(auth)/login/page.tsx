@@ -48,7 +48,9 @@ export default function LoginPage() {
       toast.error("Invalid email or password");
     } else {
       toast.success("Welcome back!");
-      router.push("/dashboard/user");
+      const session = await fetch("/api/auth/session").then((r) => r.json());
+      const role = session?.user?.role;
+      router.push(role === "admin" ? "/dashboard/admin" : "/dashboard/user");
     }
   };
 
