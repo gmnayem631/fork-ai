@@ -38,10 +38,9 @@ export default function BlogPage() {
                 className="bg-zinc-50 dark:bg-zinc-800 rounded-2xl overflow-hidden"
               >
                 <div className="relative h-56">
-                  <Image
+                  <img
                     src={post.image}
                     alt={post.title}
-                    fill
                     className="object-cover"
                   />
                 </div>

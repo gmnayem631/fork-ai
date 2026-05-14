@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
@@ -74,7 +73,7 @@ export default function AboutPage() {
                   className="bg-zinc-50 dark:bg-zinc-800 rounded-2xl overflow-hidden"
                 >
                   <div className="relative h-72 w-full">
-                    <Image
+                    <img
                       src={member.image}
                       alt={member.name}
                       fill

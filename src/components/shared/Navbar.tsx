@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useAuthStore } from "@/store/useAuthStore";
+import { useSession, signOut } from "next-auth/react";
 import { cn } from "@/lib/utils";
 
 const PUBLIC_LINKS = [
@@ -36,7 +36,10 @@ const AUTH_LINKS = [
 ];
 
 export default function Navbar() {
-  const { user, isAuthenticated, logout } = useAuthStore();
+  const { data: session } = useSession();
+  const user = session?.user;
+  const isAuthenticated = !!session;
+  const logout = () => signOut({ callbackUrl: "/" });
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(false);
@@ -104,17 +107,17 @@ export default function Navbar() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Avatar className="cursor-pointer w-9 h-9 ring-2 ring-orange-400">
-                    <AvatarImage src={user.image} />
+                    <AvatarImage src={user?.image ?? undefined} />
                     <AvatarFallback className="brand-gradient text-white text-sm font-bold">
-                      {user.name?.charAt(0).toUpperCase()}
+                      {user?.name?.charAt(0).toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <div className="px-3 py-2">
-                    <p className="font-semibold text-sm">{user.name}</p>
+                    <p className="font-semibold text-sm">{user?.name}</p>
                     <p className="text-xs text-muted-foreground">
-                      {user.email}
+                      {user?.email}
                     </p>
                   </div>
                   <DropdownMenuSeparator />
@@ -124,7 +127,7 @@ export default function Navbar() {
                   <DropdownMenuItem asChild>
                     <Link href="/dashboard/user/profile">Profile</Link>
                   </DropdownMenuItem>
-                  {user.role === "admin" && (
+                  {(user as { role?: string })?.role === "admin" && (
                     <DropdownMenuItem asChild>
                       <Link href="/dashboard/admin">Admin Panel</Link>
                     </DropdownMenuItem>
