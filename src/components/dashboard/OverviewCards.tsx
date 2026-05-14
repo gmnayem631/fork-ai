@@ -36,7 +36,7 @@ export default function OverviewCards() {
           className="bg-white dark:bg-zinc-800 rounded-2xl p-5 border border-zinc-100 dark:border-zinc-700 flex items-center gap-4"
         >
           <div
-            className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center shrink-0`}
+            className={`w-12 h-12 rounded-xl bg-linear-to-br ${card.color} flex items-center justify-center shrink-0`}
           >
             <card.icon className="w-6 h-6 text-white" />
           </div>
