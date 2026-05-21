@@ -125,8 +125,7 @@ export const RECIPES: Recipe[] = [
     title: "Avocado Toast with Poached Eggs",
     description:
       "Creamy smashed avocado on sourdough toast topped with perfectly poached eggs, chili flakes, and microgreens.",
-    image:
-      "https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=800&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/7936662/pexels-photo-7936662.jpeg",
     category: "Breakfast",
     cuisine: "American",
     difficulty: "Easy",
